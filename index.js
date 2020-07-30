@@ -10,7 +10,7 @@ const request = require('request');
  
  
  
-const token = 'NzEwNjE4MDU4NDgxMjA1MjY4.Xr3S4g.54Jvu_-djR4jhB4M0Jtj4JNEhDw';
+const token = '********************************************';
  
 const PREFIX = '!';
  
