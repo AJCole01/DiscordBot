@@ -9,14 +9,17 @@ const cheerio = require('cheerio');
 const request = require('request');
  
  
- 
+ //Bot Token from Discord Bot Creator
 const token = '********************************************';
  
+//Command Prefix
 const PREFIX = '!';
  
+//Bot Version
 var version = '1.3';
 var img = '';
  
+//Bot Online message
 bot.on('ready', () => {
     console.log('This bot is online! ' + version);
  
@@ -24,12 +27,13 @@ bot.on('ready', () => {
  
  
  
- 
+ //Turn bot on
 bot.on('message', message => {
  
     let args = message.content.slice(PREFIX.length).split(/ +/);
  
     switch (args[0]) {
+        //Image Command
         case 'image':
             for(var i=1; i<=4; i++){
                 img += args[i] + ' ';
@@ -44,6 +48,7 @@ bot.on('message', message => {
 function image(message){
  
     var options = {
+        //Get images of user input
         url: "http://results.dogpile.com/serp?qc=images&q=" + img,
         method: "GET",
         headers: {
@@ -76,7 +81,7 @@ function image(message){
             return;
         }
  
-        // Send result
+        // Send random result
         message.channel.send( urls[Math.floor(Math.random() * urls.length)]);
     });
  
